@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+<!-- Header -->
+<header class="bg-light p-3 mb-4 border-bottom shadow-sm">
+  <div class="container d-flex align-items-center">
+    <img src="{{ url_for('static', filename='img/LOGO-OFICIAL.png') }}" alt="Logo Colegio" style="height: 50px;">
+    <h1 class="h4 mb-0 mx-auto">MONTESSORI LEARNING FEST</h1>
+  </div>
+</header>
+
+<!-- Contenido Principal -->
+<main class="container d-flex flex-column flex-grow-1">
+  <div class="row d-flex flex-column flex-grow-1">
+    <!-- Carrusel -->
+    <div class="col-md-8 d-flex flex-column">
+      <div id="learningFestCarousel" class="carousel slide flex-grow-1" data-bs-interval="false">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{{ url_for('static', filename='img/slide1.png') }}" class="d-block w-100 carousel-image" alt="Slide 1" style="cursor: pointer;">
+          </div>
+          <div class="carousel-item">
+            <img src="{{ url_for('static', filename='img/slide2.png') }}" class="d-block w-100 carousel-image" alt="Slide 2" style="cursor: pointer;">
+          </div>
+          <div class="carousel-item">
+            <img src="{{ url_for('static', filename='img/slide3.png') }}" class="d-block w-100 carousel-image" alt="Slide 3" style="cursor: pointer;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Bot Flotante Neuronito -->
+<div id="neuronito-bot" class="position-fixed bottom-0 end-0 p-3 d-flex flex-column align-items-end" style="z-index: 1100;">
+    <div id="neuronito-dialog" class="card shadow-sm" style="display: none; max-width: 250px; width: 70vw;">
+        <div class="card-body">
+            <p id="neuronito-text" class="card-text"></p>
+            <div id="neuronito-question" style="display: none;">
+                <a href="/como-lo-hacemos" class="btn btn-success btn-sm">Sí</a>
+                <button id="restart-carousel" class="btn btn-danger btn-sm">No</button>
+            </div>
+        </div>
+    </div>
+    <img src="{{ url_for('static', filename='img/Neuronito_gif.gif') }}" alt="Neuronito" style="max-width: 100px; width: 20vw; cursor: pointer;" id="neuronito-avatar">
+</div>
+{% endblock %}

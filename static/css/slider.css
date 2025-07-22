@@ -1,0 +1,21 @@
+.slider-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    flex-grow: 1;
+    min-height: 0;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+.slider img {
+    width: 100%;
+    flex-shrink: 0;
+    display: block;
+    height: 100%;
+    object-fit: contain;
+}

@@ -1,0 +1,25 @@
+.main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #eee;
+    min-height: 0;
+}
+
+.logo-container {
+    margin-right: 20px;
+}
+
+.app-logo {
+    height: 60px; /* Ajusta el tamaño del logo según sea necesario */
+}
+
+.app-title {
+    margin: 0;
+    font-size: 2em;
+    color: #333;
+    text-align: center;
+    flex-grow: 1;
+}
