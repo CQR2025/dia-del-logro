@@ -89,3 +89,10 @@ main.container .col-12 {
 .fade-in-effect {
     animation: fadeIn 0.5s ease-in forwards;
 }
+
+/* Reducir el tamaño del logo en móviles */
+@media (max-width: 767px) {
+    .logo-mlf {
+        height: 45px !important; /* 90% de 50px */
+    }
+}

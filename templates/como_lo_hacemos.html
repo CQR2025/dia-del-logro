@@ -4,7 +4,7 @@
 <header class="bg-light p-3 mb-4 border-bottom shadow-sm">
   <div class="container d-flex align-items-center">
     <img src="{{ url_for('static', filename='img/LOGO-OFICIAL.png') }}" alt="Logo Colegio" style="height: 50px;">
-    <h1 class="h4 mb-0 mx-auto">MONTESSORI LEARNING FEST</h1>
+    <img src="{{ url_for('static', filename='img/logo_mlf.png') }}" alt="Logo MLF" class="img-fluid mx-auto logo-mlf" style="height: 50px;">
   </div>
 </header>
 
@@ -12,50 +12,44 @@
 <main class="container d-flex flex-column flex-grow-1">
   <div class="row d-flex flex-column flex-grow-1">
     <div class="col-12 flex-grow-1">
-      <h2 class="mb-3">¿Cómo lo logramos?</h2>
-      <p>En el Montessori Learning Fest, nuestro enfoque se centra en la curiosidad y la autonomía del estudiante. A continuación, te detallamos los pilares de nuestro éxito:</p>
-      
-      <div class="accordion" id="accordionDetails">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingOne">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              <strong>Pilar 1: Aprendizaje Basado en Proyectos (ABP)</strong>
-            </button>
-          </h2>
-          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionDetails">
-            <div class="accordion-body">
-              Cada stand y presentación es el resultado de un proyecto de investigación profundo, donde los alumnos eligen un tema de su interés, lo investigan y preparan una forma creativa de presentarlo. Esto fomenta la responsabilidad y el aprendizaje significativo.
+      <h2 class="mb-3 text-center">Nuestra Propuesta Educativa</h2>
+      <p class="lead text-center mb-4">Descubre el enfoque educativo de cada nivel, desde la exploración inicial hasta la formación de líderes.</p>
+
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <img src="{{ url_for('static', filename='img/levels/inicial.svg') }}" class="card-img-top" alt="Nivel Inicial">
+            <div class="card-body">
+              <h5 class="card-title">Nivel Inicial</h5>
+              <p class="card-text">Sentamos las bases del aprendizaje a través del juego y la exploración. En un ambiente cálido y seguro, fomentamos la curiosidad innata de los más pequeños, desarrollando su autonomía y habilidades socioemocionales con la guía de las metodologías Montessori y Reggio Emilia.</p>
+              <a href="{{ url_for('mostrar_nivel', nivel='inicial') }}" class="btn btn-outline-primary mt-3">Ver Aulas de Inicial</a>
             </div>
           </div>
         </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingTwo">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              <strong>Pilar 2: Colaboración y Trabajo en Equipo</strong>
-            </button>
-          </h2>
-          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionDetails">
-            <div class="accordion-body">
-              Los estudiantes trabajan en equipos, asignando roles y responsabilidades. Aprenden a negociar, a comunicarse eficazmente y a valorar las fortalezas de sus compañeros para alcanzar un objetivo común. El festival es un reflejo de su sinergia.
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <img src="{{ url_for('static', filename='img/levels/primaria.svg') }}" class="card-img-top" alt="Nivel Primaria">
+            <div class="card-body">
+              <h5 class="card-title">Nivel Primaria</h5>
+              <p class="card-text">Consolidamos el pensamiento crítico y la colaboración. Mediante el Aprendizaje Basado en Proyectos y el enfoque STEAM, los estudiantes investigan, crean y resuelven problemas del mundo real, fortaleciendo su capacidad de trabajo en equipo y su pasión por descubrir.</p>
+              <a href="{{ url_for('mostrar_nivel', nivel='primaria') }}" class="btn btn-outline-primary mt-3">Ver Aulas de Primaria</a>
             </div>
           </div>
         </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingThree">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              <strong>Pilar 3: Guía del Educador y Apoyo Familiar</strong>
-            </button>
-          </h2>
-          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionDetails">
-            <div class="accordion-body">
-              Nuestros docentes actúan como guías, facilitando recursos y orientando el proceso de aprendizaje sin imponer directrices rígidas. Además, la participación de los padres de familia es crucial, apoyando desde casa y celebrando los logros de sus hijos en el evento final.
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <img src="{{ url_for('static', filename='img/levels/secundaria.svg') }}" class="card-img-top" alt="Nivel Secundaria">
+            <div class="card-body">
+              <h5 class="card-title">Nivel Secundaria</h5>
+              <p class="card-text">Formamos líderes con visión de futuro. Preparamos a los jóvenes para los retos globales, potenciando sus habilidades en tecnología, comunicación y liderazgo ético. Nuestro objetivo es que se conviertan en agentes de cambio, listos para transformar su entorno con confianza e integridad.</p>
+              <a href="{{ url_for('mostrar_nivel', nivel='secundaria') }}" class="btn btn-outline-primary mt-3">Ver Aulas de Secundaria</a>
             </div>
           </div>
         </div>
       </div>
 
       <div class="text-center mt-4">
-        <a href="/" class="btn btn-primary">Volver al inicio</a>
+        <a href="/festival" class="btn btn-primary">Explorar el Festival</a>
       </div>
     </div>
   </div>

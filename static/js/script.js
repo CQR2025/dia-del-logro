@@ -33,7 +33,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const messages = [
         "¡Bienvenido! Haz clic en mí o en la imagen para avanzar y descubrir cómo nuestros alumnos convierten sus ideas en proyectos increíbles.",
         "Fomentamos la colaboración y el trabajo en equipo. ¡Juntos aprendemos mejor!",
-        "Cada presentación es una aventura de conocimiento guiada por la curiosidad."
+        "Cada presentación es una aventura de conocimiento guiada por la curiosidad.",
+        "¡Descubre más sobre nuestros proyectos y logros!"
     ];
 
     // --- Funciones --- //
@@ -49,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (slideIndex === messages.length - 1) {
             setTimeout(() => {
                 if (novaText) {
-                    novaText.textContent = '¿Quieres saber cómo lo logramos?';
+                    novaText.textContent = 'Mira cómo creció y aprendió tu hijo en estos meses.';
                 }
                 if (novaQuestion) {
                     novaQuestion.style.display = 'block';

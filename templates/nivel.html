@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+{% block content %}
+<header class="bg-light p-3 mb-4 border-bottom shadow-sm">
+  <div class="container d-flex align-items-center">
+    <img src="{{ url_for('static', filename='img/LOGO-OFICIAL.png') }}" alt="Logo Colegio" style="height: 50px;">
+    <img src="{{ url_for('static', filename='img/logo_mlf.png') }}" alt="Logo MLF" class="img-fluid mx-auto logo-mlf" style="height: 50px;">
+  </div>
+</header>
+
+<main class="container flex-grow-1">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for aula_name, aula_data in aulas.items() %}
+    <div class="col">
+      <div class="card h-100 shadow-sm aula-card" data-aula-name="{{ aula_name }}">
+        {% if aula_data.random_image %}
+        <img src="{{ aula_data.random_image }}" class="card-img-top" alt="Imagen de {{ aula_name }}" style="height: 180px; object-fit: cover;">
+        {% endif %}
+        <div class="card-body text-center">
+          <h5 class="card-title">{{ aula_name }}</h5>
+          <p class="card-text">{{ aula_data.all_images|length }} imágenes</p>
+          <button class="btn btn-primary view-gallery-btn" data-bs-toggle="modal" data-bs-target="#imageGalleryModal">Ver Galería</button>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="text-center mt-4">
+    <a href="/como-lo-hacemos" class="btn btn-secondary">Volver a Niveles</a>
+  </div>
+</main>
+
+<!-- Modal de Galería de Imágenes -->
+<div class="modal fade" id="imageGalleryModal" tabindex="-1" aria-labelledby="imageGalleryModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="imageGalleryModalLabel">Galería de Aula</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <!-- Imágenes se cargarán aquí dinámicamente -->
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const aulasData = {{ aulas_json | safe }};
+    const imageGalleryModal = document.getElementById('imageGalleryModal');
+    const carouselInner = imageGalleryModal.querySelector('.carousel-inner');
+    const modalTitle = imageGalleryModal.querySelector('#imageGalleryModalLabel');
+
+    document.querySelectorAll('.aula-card').forEach(card => {
+      card.addEventListener('click', function() {
+        const aulaName = this.dataset.aulaName;
+        const images = aulasData[aulaName].all_images;
+
+        modalTitle.textContent = 'Galería de ' + aulaName;
+        carouselInner.innerHTML = ''; // Limpiar carrusel anterior
+
+        images.forEach((imageUrl, index) => {
+          const carouselItem = document.createElement('div');
+          carouselItem.classList.add('carousel-item');
+          if (index === 0) {
+            carouselItem.classList.add('active');
+          }
+          const img = document.createElement('img');
+          img.src = imageUrl;
+          img.classList.add('d-block', 'w-100');
+          img.alt = aulaName + ' Image ' + (index + 1);
+          img.setAttribute('loading', 'lazy'); // Añadir lazy loading
+          carouselItem.appendChild(img);
+          carouselInner.appendChild(carouselItem);
+        });
+
+        // Inicializar el carrusel de Bootstrap después de cargar las imágenes
+        const carousel = new bootstrap.Carousel(document.getElementById('imageCarousel'));
+        carousel.to(0); // Asegurarse de que el carrusel empiece en la primera imagen
+      });
+    });
+  });
+</script>
+{% endblock %}
