@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const quizContainer = document.getElementById('quiz-container');
     const questionText = document.getElementById('question-text');
     const optionsContainer = document.getElementById('options-container');
-    const neuronitoSpeech = document.getElementById('neuronito-speech');
+    const novaSpeech = document.getElementById('nova-speech');
     const mainGameContainer = document.querySelector('.d-flex.flex-column.justify-content-center.align-items-center.vh-100.bg-white.text-center.overflow-y-auto');
 
     let currentQuestion = null; // Almacenará la pregunta actual seleccionada aleatoriamente
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
         currentQuestion = null;
         quizContainer.style.display = 'block'; // Mostrar el contenedor del cuestionario directamente
         feedbackText.style.display = 'none';
-        neuronitoSpeech.style.display = 'none'; // Asegurarse de que el mensaje de Neuronito esté oculto al inicio
+        novaSpeech.style.display = 'none'; // Asegurarse de que el mensaje de nova esté oculto al inicio
         
         displayQuestion(); // Mostrar la primera pregunta
         console.log("Game initialized. Question displayed.");
@@ -104,11 +104,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Lógica de verificación y redirección/reinicio aquí
                 const selectedOption = event.target;
                 if (selectedOption.dataset.correct === 'true') {
-                    // Ocultar feedbackText y mostrar neuronitoSpeech
+                    // Ocultar feedbackText y mostrar novaSpeech
                     feedbackText.style.display = 'none';
-                    neuronitoSpeech.textContent = '¡Felicidades, es correcto! Ahora conoceremos qué es MONTESSORI LEARNING FEST.';
-                    neuronitoSpeech.style.display = 'block';
-                    neuronitoSpeech.style.color = 'green'; // Opcional: color para el mensaje de Neuronito
+                    novaSpeech.textContent = '¡Felicidades, es correcto! Ahora conoceremos qué es MONTESSORI LEARNING FEST.';
+                    novaSpeech.style.display = 'block';
+                    novaSpeech.style.color = 'green'; // Opcional: color para el mensaje de nova
 
                     // Deshabilitar botones para evitar múltiples clics
                     Array.from(optionsContainer.children).forEach(btn => btn.disabled = true);
@@ -121,14 +121,14 @@ document.addEventListener('DOMContentLoaded', function () {
                         setTimeout(() => {
                             window.location.href = '/festival'; // Redirigir después de la animación
                         }, 350); // Duración de la animación de desvanecimiento
-                    }, 1500); // Mostrar mensaje de Neuronito por 1.5 segundos
+                    }, 1500); // Mostrar mensaje de nova por 1.5 segundos
                 } else {
-                    // Ocultar feedbackText y mostrar neuronitoSpeech para respuesta incorrecta
+                    // Ocultar feedbackText y mostrar novaSpeech para respuesta incorrecta
                     feedbackText.style.display = 'none';
                     const correctAnswerButton = optionsContainer.querySelector('[data-correct="true"]');
-                    neuronitoSpeech.textContent = 'Incorrecto. La respuesta correcta era: ' + correctAnswerButton.textContent + '. ¡Inténtalo de nuevo!';
-                    neuronitoSpeech.style.color = 'red';
-                    neuronitoSpeech.style.display = 'block';
+                    novaSpeech.textContent = 'Incorrecto. La respuesta correcta era: ' + correctAnswerButton.textContent + '. ¡Inténtalo de nuevo!';
+                    novaSpeech.style.color = 'red';
+                    novaSpeech.style.display = 'block';
 
                     // Deshabilitar botones para evitar múltiples clics
                     Array.from(optionsContainer.children).forEach(btn => btn.disabled = true);

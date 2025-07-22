@@ -21,11 +21,11 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('Carousel Instance:', carouselInstance);
     }
 
-    const neuronitoDialog = document.getElementById('neuronito-dialog');
-    const neuronitoText = document.getElementById('neuronito-text');
-    const neuronitoQuestion = document.getElementById('neuronito-question');
+    const novaDialog = document.getElementById('nova-dialog');
+    const novaText = document.getElementById('nova-text');
+    const novaQuestion = document.getElementById('nova-question');
     const restartButton = document.getElementById('restart-carousel');
-    const neuronitoAvatar = document.getElementById('neuronito-avatar');
+    const novaAvatar = document.getElementById('nova-avatar');
     const carouselImages = document.querySelectorAll('.carousel-image');
 
     let currentSlideIndex = 0;
@@ -38,21 +38,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // --- Funciones --- //
 
-    function updateNeuronitoText(slideIndex) {
-        if (neuronitoText) {
-            neuronitoText.textContent = messages[slideIndex];
+    function updatenovaText(slideIndex) {
+        if (novaText) {
+            novaText.textContent = messages[slideIndex];
         }
-        if (neuronitoQuestion) {
-            neuronitoQuestion.style.display = 'none';
+        if (novaQuestion) {
+            novaQuestion.style.display = 'none';
         }
 
         if (slideIndex === messages.length - 1) {
             setTimeout(() => {
-                if (neuronitoText) {
-                    neuronitoText.textContent = '¿Quieres saber cómo lo logramos?';
+                if (novaText) {
+                    novaText.textContent = '¿Quieres saber cómo lo logramos?';
                 }
-                if (neuronitoQuestion) {
-                    neuronitoQuestion.style.display = 'block';
+                if (novaQuestion) {
+                    novaQuestion.style.display = 'block';
                 }
             }, 1500);
         }
@@ -87,10 +87,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }, 100); // Pequeño retraso de 100ms
 
-    // Clic en el avatar de Neuronito AVANZA el slide
-    if (neuronitoAvatar) {
-        neuronitoAvatar.addEventListener('click', advanceCarousel);
-        console.log('Neuronito avatar click listener attached.');
+    // Clic en el avatar de nova AVANZA el slide
+    if (novaAvatar) {
+        novaAvatar.addEventListener('click', advanceCarousel);
+        console.log('nova avatar click listener attached.');
     }
 
     // Clic en la imagen del carrusel AVANZA el slide
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function () {
         carouselElement.addEventListener('slid.bs.carousel', function (event) {
             currentSlideIndex = event.to;
             console.log('slid.bs.carousel event fired. New slide index:', currentSlideIndex);
-            updateNeuronitoText(currentSlideIndex);
+            updatenovaText(currentSlideIndex);
         });
     }
 
@@ -116,8 +116,8 @@ document.addEventListener('DOMContentLoaded', function () {
             if (carouselInstance) {
                 carouselInstance.to(0);
             }
-            if (neuronitoDialog) {
-                neuronitoDialog.style.display = 'block'; // Aseguramos que el diálogo sea visible al reiniciar
+            if (novaDialog) {
+                novaDialog.style.display = 'block'; // Aseguramos que el diálogo sea visible al reiniciar
             }
             console.log('Carousel reset to first slide.');
         });
@@ -126,11 +126,11 @@ document.addEventListener('DOMContentLoaded', function () {
     // --- Inicialización --- //
 
     // Muestra el diálogo y establece el primer mensaje al inicio
-    if (neuronitoDialog) {
+    if (novaDialog) {
         setTimeout(() => {
-            neuronitoDialog.style.display = 'block';
-            updateNeuronitoText(0);
-            console.log('Initial Neuronito dialog and text set.');
+            novaDialog.style.display = 'block';
+            updatenovaText(0);
+            console.log('Initial nova dialog and text set.');
         }, 500);
     }
 

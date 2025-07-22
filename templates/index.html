@@ -32,17 +32,17 @@
   </div>
 </main>
 
-<!-- Bot Flotante Neuronito -->
-<div id="neuronito-bot" class="position-fixed bottom-0 end-0 p-3 d-flex flex-column align-items-end" style="z-index: 1100;">
-    <div id="neuronito-dialog" class="card shadow-sm" style="display: none; max-width: 250px; width: 70vw;">
+<!-- Bot Flotante nova -->
+<div id="nova-bot" class="position-fixed bottom-0 end-0 p-3 d-flex flex-column align-items-end" style="z-index: 1100;">
+    <div id="nova-dialog" class="card shadow-sm" style="display: none; max-width: 250px; width: 70vw;">
         <div class="card-body">
-            <p id="neuronito-text" class="card-text"></p>
-            <div id="neuronito-question" style="display: none;">
+            <p id="nova-text" class="card-text"></p>
+            <div id="nova-question" style="display: none;">
                 <a href="/como-lo-hacemos" class="btn btn-success btn-sm">Sí</a>
                 <button id="restart-carousel" class="btn btn-danger btn-sm">No</button>
             </div>
         </div>
     </div>
-    <img src="{{ url_for('static', filename='img/Neuronito_gif.gif') }}" alt="Neuronito" style="max-width: 100px; width: 20vw; cursor: pointer;" id="neuronito-avatar">
+    <img src="{{ url_for('static', filename='img/nova_gif.gif') }}" alt="nova" style="max-width: 100px; width: 20vw; cursor: pointer;" id="nova-avatar">
 </div>
 {% endblock %}
