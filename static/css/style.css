@@ -96,3 +96,88 @@ main.container .col-12 {
         height: 45px !important; /* 90% de 50px */
     }
 }
+
+/* Estilos por defecto para Nova */
+#nova-avatar {
+    max-width: 100px;
+    width: 20vw;
+}
+
+.banner-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20vh;
+    background-size: contain;
+    background-position: top center;
+    background-repeat: no-repeat;
+}
+
+.game-main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: white;
+    text-align: center;
+    overflow-y: auto;
+    padding-top: 20vh; /* Adjust based on banner height */
+}
+
+/* Media queries para el bot flotante */
+@media (max-width: 576px) {
+    #nova-bot {
+        padding: 0px; /* Reducir el padding en pantallas pequeñas */
+    }
+    #nova-dialog {
+        max-width: 90vw; /* Permitir que el diálogo sea más ancho en pantallas pequeñas */
+    }
+    #nova-avatar {
+        max-width: 138px; /* Aumentar el tamaño del avatar en un 20% */
+        width: 27.6vw; /* Aumentar el tamaño del avatar en un 20% */
+    }
+}
+
+.btn-festival-custom {
+    background-color: #dc3545; /* Rojo de Bootstrap (danger) */
+    border-color: #dc3545;
+    color: #fff;
+}
+
+.btn-festival-custom:hover,
+.btn-festival-custom:focus,
+.btn-festival-custom:active {
+    background-color: #28a745; /* Verde de Bootstrap (success) */
+    border-color: #28a745;
+    color: #fff;
+}
+
+.btn-gallery-custom {
+    background-color: #dc3545; /* Rojo de Bootstrap (danger) */
+    border-color: #dc3545;
+    color: #fff;
+}
+
+.btn-gallery-custom:hover,
+.btn-gallery-custom:focus,
+.btn-gallery-custom:active {
+    background-color: #28a745; /* Verde de Bootstrap (success) */
+    border-color: #28a745;
+    color: #fff;
+}
+
+.btn-back-levels-custom {
+    background-color: #28a745; /* Verde de Bootstrap (success) */
+    border-color: #28a745;
+    color: #fff;
+}
+
+.btn-back-levels-custom:hover,
+.btn-back-levels-custom:focus,
+.btn-back-levels-custom:active {
+    background-color: #dc3545; /* Rojo de Bootstrap (danger) */
+    border-color: #dc3545;
+    color: #fff;
+}

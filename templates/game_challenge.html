@@ -1,8 +1,9 @@
 {% extends "layout.html" %}
 {% block content %}
-<div class="d-flex flex-column justify-content-center align-items-center min-vh-100 bg-white text-center overflow-y-auto">
+<div class="banner-background" style="background-image: url({{ url_for('static', filename='img/banderines-festivos.png') }});"></div>
+<div class="game-main-content">
     <div class="d-flex align-items-center justify-content-center mb-3">
-        <img src="{{ url_for('static', filename='img/nova_gif.gif') }}" alt="nova" class="img-fluid" style="max-width: 17vw;">
+        <img src="{{ url_for('static', filename='img/nova_gif.gif') }}" alt="nova" class="img-fluid" style="max-width: 35.13vw;">
         <div id="nova-speech" class="alert alert-info ms-3" style="display: none; max-width: 60vw;"></div>
     </div>
     <h1 class="mb-1 h4">¡Hola! Soy Nova.</h1>

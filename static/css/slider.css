@@ -19,3 +19,15 @@
     height: 100%;
     object-fit: contain;
 }
+
+.carousel-inner,
+.carousel-item {
+    height: 100%; /* Asegura que el inner y los items ocupen toda la altura */
+}
+
+/* Media queries para el carrusel */
+@media (max-width: 767px) {
+    .slider-container {
+        /* Eliminada la altura fija para permitir que flex-grow tome el control */
+    }
+}

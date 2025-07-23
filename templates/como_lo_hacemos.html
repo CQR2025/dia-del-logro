@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% block content %}
 <!-- Header -->
-<header class="bg-light p-3 mb-4 border-bottom shadow-sm">
+<header class="bg-light p-3 mb-2 border-bottom shadow-sm">
   <div class="container d-flex align-items-center">
     <img src="{{ url_for('static', filename='img/LOGO-OFICIAL.png') }}" alt="Logo Colegio" style="height: 50px;">
     <img src="{{ url_for('static', filename='img/logo_mlf.png') }}" alt="Logo MLF" class="img-fluid mx-auto logo-mlf" style="height: 50px;">
@@ -10,46 +10,41 @@
 
 <!-- Contenido Detallado -->
 <main class="container d-flex flex-column flex-grow-1">
+  <h2 class="text-center mb-2">Nuestros Niveles Educativos</h2>
   <div class="row d-flex flex-column flex-grow-1">
     <div class="col-12 flex-grow-1">
-      <h2 class="mb-3 text-center">Nuestra Propuesta Educativa</h2>
-      <p class="lead text-center mb-4">Descubre el enfoque educativo de cada nivel, desde la exploración inicial hasta la formación de líderes.</p>
-
       <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col">
-          <div class="card h-100 shadow-sm">
-            <img src="{{ url_for('static', filename='img/levels/inicial.svg') }}" class="card-img-top" alt="Nivel Inicial">
-            <div class="card-body">
-              <h5 class="card-title">Nivel Inicial</h5>
-              <p class="card-text">Sentamos las bases del aprendizaje a través del juego y la exploración. En un ambiente cálido y seguro, fomentamos la curiosidad innata de los más pequeños, desarrollando su autonomía y habilidades socioemocionales con la guía de las metodologías Montessori y Reggio Emilia.</p>
-              <a href="{{ url_for('mostrar_nivel', nivel='inicial') }}" class="btn btn-outline-primary mt-3">Ver Aulas de Inicial</a>
+          <div class="card h-100 shadow-sm text-center">
+            <img src="{{ url_for('static', filename='img/levels/nivel_inicial.jpg') }}" class="card-img-top mx-auto mt-0" alt="Nivel Inicial" style="width: 200px; height: 200px; object-fit: contain;">
+            <div class="card-body d-flex flex-column pt-0">
+              <h5 class="card-title mt-auto">Nivel Inicial</h5>
+              <a href="{{ url_for('mostrar_nivel', nivel='inicial') }}" class="btn btn-warning mt-3">Ver Aulas de Inicial</a>
             </div>
           </div>
         </div>
         <div class="col">
-          <div class="card h-100 shadow-sm">
-            <img src="{{ url_for('static', filename='img/levels/primaria.svg') }}" class="card-img-top" alt="Nivel Primaria">
-            <div class="card-body">
-              <h5 class="card-title">Nivel Primaria</h5>
-              <p class="card-text">Consolidamos el pensamiento crítico y la colaboración. Mediante el Aprendizaje Basado en Proyectos y el enfoque STEAM, los estudiantes investigan, crean y resuelven problemas del mundo real, fortaleciendo su capacidad de trabajo en equipo y su pasión por descubrir.</p>
-              <a href="{{ url_for('mostrar_nivel', nivel='primaria') }}" class="btn btn-outline-primary mt-3">Ver Aulas de Primaria</a>
+          <div class="card h-100 shadow-sm text-center">            
+            <img src="{{ url_for('static', filename='img/levels/nivel_primaria.jpeg') }}" class="card-img-top mx-auto mt-0" alt="Nivel Primaria" style="width: 200px; height: 200px; object-fit: contain;">
+            <div class="card-body d-flex flex-column pt-0">
+              <h5 class="card-title mt-auto">Nivel Primaria</h5>
+              <a href="{{ url_for('mostrar_nivel', nivel='primaria') }}" class="btn btn-danger mt-3">Ver Aulas de Primaria</a>
             </div>
           </div>
         </div>
         <div class="col">
-          <div class="card h-100 shadow-sm">
-            <img src="{{ url_for('static', filename='img/levels/secundaria.svg') }}" class="card-img-top" alt="Nivel Secundaria">
-            <div class="card-body">
-              <h5 class="card-title">Nivel Secundaria</h5>
-              <p class="card-text">Formamos líderes con visión de futuro. Preparamos a los jóvenes para los retos globales, potenciando sus habilidades en tecnología, comunicación y liderazgo ético. Nuestro objetivo es que se conviertan en agentes de cambio, listos para transformar su entorno con confianza e integridad.</p>
-              <a href="{{ url_for('mostrar_nivel', nivel='secundaria') }}" class="btn btn-outline-primary mt-3">Ver Aulas de Secundaria</a>
+          <div class="card h-100 shadow-sm text-center">
+            <img src="{{ url_for('static', filename='img/levels/nivel_secundaria.jpg') }}" class="card-img-top mx-auto mt-0" alt="Nivel Secundaria" style="width: 200px; height: 200px; object-fit: contain;">
+            <div class="card-body d-flex flex-column pt-0">
+              <h5 class="card-title mt-auto">Nivel Secundaria</h5>
+              <a href="{{ url_for('mostrar_nivel', nivel='secundaria') }}" class="btn btn-success mt-3">Ver Aulas de Secundaria</a>
             </div>
           </div>
         </div>
       </div>
 
       <div class="text-center mt-4">
-        <a href="/festival" class="btn btn-primary">Explorar el Festival</a>
+        <a href="/festival" class="btn btn-festival-custom">Explorar el Festival</a>
       </div>
     </div>
   </div>

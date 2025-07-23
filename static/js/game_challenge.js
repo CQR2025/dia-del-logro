@@ -13,42 +13,39 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             question: "¿Cuál es para nosotros un pilar fundamental en el enfoque educativo?",
             options: [
-                "Énfasis en la memorización y repetición.",
+                "Énfasis en la memorización y repetición sin sentido.",
                 "Fomento del pensamiento crítico y la autonomía.",
-                "Exclusiva preparación para competencias deportivas.",
-                "Especialización en artes escénicas."
+                "Enseñanza autoritaria sin participación del alumno."
             ],
             correctAnswer: 1 // Índice de la opción correcta (0-based)
         },
         {
-            question: "¿Qué metodologías pedagógicas utilizamos para el desarrollo de habilidades?",
+            question: "¿Qué metodología pedagógica utilizamos para el desarrollo de competencias?",
             options: [
-                "Solo la metodología Montessori.",
-                "Reggio Emilia, STEAM y Aprendizaje Basado en Proyectos.",
+                "Proyectos de aprendizaje STEAM.",
                 "Únicamente el método tradicional de enseñanza.",
                 "Ninguna metodología específica, solo un enfoque general."
             ],
-            correctAnswer: 1
+            correctAnswer: 0
         },
         {
-            question: "¿Qué niveles educativos ofrecemos?",
+            question: "¿Qué logramos mediante el aprendizaje basado en proyectos de aprendizaje STEAM?",
             options: [
-                "Solo inicial y primaria.",
-                "Solo primaria y secundaria.",
-                "Inicial, primaria y secundaria.",
-                "Únicamente educación superior."
+                "Resolver ejercicios repetitivos en silencio.",
+                "Investigar, crear, y aplicar conocimientos en situaciones reales.",
+                "Memorizar datos para una prueba.",
             ],
-            correctAnswer: 2
+            correctAnswer: 1
         },
         {
             question: "¿Para qué examen internacional nos preparamos?",
             options: [
-                "Exámenes nacionales de admisión universitaria.",
-                "Exámenes de idiomas Cambridge.",
+                "Exámenes de certificación Cambridge.",
                 "Exámenes de aptitud deportiva.",
                 "Exámenes de música y arte."
             ],
-            correctAnswer: 1
+
+            correctAnswer: 0
         }
     ];
 

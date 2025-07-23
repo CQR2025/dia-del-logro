@@ -23,3 +23,24 @@
     text-align: center;
     flex-grow: 1;
 }
+
+/* Media queries para el encabezado */
+@media (max-width: 767px) {
+    .main-header {
+        flex-direction: column; /* Apilar elementos en pantallas pequeñas */
+        text-align: center;
+    }
+    .app-title {
+        font-size: 1.5em; /* Reducir tamaño de fuente */
+        margin-top: 10px; /* Espacio entre logo y título */
+    }
+    .logo-container {
+        margin-right: 0; /* Eliminar margen derecho */
+    }
+}
+
+@media (max-width: 480px) { /* Para teléfonos muy pequeños */
+    .app-title {
+        font-size: 1.2em;
+    }
+}
