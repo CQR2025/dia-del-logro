@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let currentSlideIndex = 0;
 
     const messages = [
-        "¡Bienvenido! Haz clic en mí o en la imagen para avanzar y descubrir cómo nuestros alumnos convierten sus ideas en proyectos increíbles.",
+        "¡Bienvenido! Descubramos juntos cómo nuestros alumnos convierten sus ideas en proyectos increíbles.",
         "Fomentamos la colaboración y el trabajo en equipo. ¡Juntos aprendemos mejor!",
         "Cada presentación es una aventura de conocimiento guiada por la curiosidad.",
         "¡Descubre más sobre nuestros proyectos y logros!"
